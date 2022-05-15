@@ -1,0 +1,8 @@
+integrations:
+  - id: 1234
+    scopes:
+      - guilds: ["*"]
+        allow:
+          - READ
+          - SEND
+    token: abcd1234

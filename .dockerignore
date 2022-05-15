@@ -1,0 +1,14 @@
+# Ignore all
+*
+
+# Allow source
+!src/**
+!alembic.ini
+!config.yml
+
+# Allow poetry
+!pyproject.toml
+!poetry.lock
+
+# Allow entrypoint
+!entrypoint.sh
