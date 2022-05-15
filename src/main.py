@@ -38,6 +38,9 @@ async def integration_middleware(
     request: Request,
     call_next: Callable[..., Coroutine[None, None, Response]],
 ) -> Response:
+    if request.url.path.startswith(("/docs", "/openapi")):
+        return await call_next(request)
+
     token = request.headers.get("Authorization")
 
     if not token:
