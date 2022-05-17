@@ -10,7 +10,7 @@ router = APIRouter(prefix="/integrations")
 async def get_integration(request: Request, id: int) -> GetIntegrationResponse:
     """Get the integration details about the specified integration."""
 
-    if not request.state.integration.can("VIEW_INTEGRATIONS"):
+    if request.state.integration.id != id and not request.state.integration.can("VIEW_INTEGRATIONS"):
         raise HTTPException(status_code=403)
 
     try:
